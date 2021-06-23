@@ -1,5 +1,7 @@
 <?php
 
+use Tygh\Navigation\LastView;
+
 function fn_ed_order_status_histories_add_log($data = [])
 {
     if (!empty($_SESSION['auth']['user_id'])) {
@@ -31,4 +33,47 @@ function fn_ed_order_status_histories_change_order_status($status_to, $status_fr
         'status_to' => $status_to,
     ]);
     return true;
+}
+
+/*
+ * get order status histories
+*/
+function fn_get_order_status_histories($params)
+{
+    $params = LastView::instance()->update('order_status_histories', $params);
+
+    $default_params = [
+        'page' => 1
+    ];
+
+    $params = array_merge($default_params, $params);
+
+    $sortings = [
+        'timestamp' => ['?:order_status_histories.timestamp', '?:order_status_histories.log_id'],
+        'user' => ['?:users.lastname', '?:users.firstname'],
+    ];
+
+    $fields = [
+        '?:order_status_histories.*',
+        '?:users.firstname',
+        '?:users.lastname'
+    ];
+
+    $sorting = db_sort($params, $sortings, 'timestamp', 'desc');
+
+    $join = "LEFT JOIN ?:users USING(user_id)";
+
+    $condition = '';
+    $limit = '';
+
+    if (!empty($params['items_per_page'])) {
+        $params['total_items'] = db_get_field("SELECT COUNT(DISTINCT(?:order_status_histories.log_id)) FROM ?:order_status_histories ?p WHERE 1 ?p", $join, $condition);
+        $limit = db_paginate($params['page'], $params['items_per_page']);
+    }
+
+    $items = db_get_array("SELECT " . join(', ', $fields) . " FROM ?:order_status_histories ?p WHERE 1 ?p $sorting $limit", $join, $condition);
+
+    LastView::instance()->processResults('order_status_histories', $items, $params);
+
+    return [$items, $params];
 }
