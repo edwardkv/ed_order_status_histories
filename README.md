@@ -1,4 +1,4 @@
-# Модуль 'история изменения статусов заказов' ed_order_status_histories for cs-cart.
+# Модуль 'история изменения статусов заказов' (ed_order_status_histories) 
 
 Скопировать в директорию cscart
 
