@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<addon scheme="3.0">
+    <id>ed_order_status_histories</id>
+    <name>Order status histories</name>
+    <description>View order status history in menu Order->History of changes in order statuses</description>
+    <version>1.0</version>
+    <priority>77777778</priority>
+    <position>0</position>
+    <supplier>Edward Kurnosov</supplier>
+    <supplier_link>https://edwardkv.github.io/cv/</supplier_link>
+    <status>active</status>
+    <auto_install>MULTIVENDOR,ULTIMATE</auto_install>
+    <default_language>en</default_language>
+    <authors>
+        <author>
+            <name>Edward Kurnosov</name>
+            <email>edwardkv@gmail.com.com</email>
+            <url>https://edwardkv.github.io/cv/</url>
+            <phone>+7 902 356 60 86</phone>
+        </author>
+    </authors>
+    <language_variables>
+        <item id="ed_order_status_histories" lang="en">Orders history status</item>
+        <item id="ed_order_status_histories" lang="ru">История изменения статусов заказов</item>
+        <item id="order_status_histories" lang="en">History of changes in order statuses</item>
+        <item id="order_status_histories" lang="ru">История изменения статусов заказов</item>
+        <item id="order_status_histories_order_id" lang="ru">ID заказа</item>
+        <item id="order_status_histories_order_id" lang="en">order ID</item>
+        <item id="order_status_histories_old_status" lang="ru">Старый статус</item>
+        <item id="order_status_histories_old_status" lang="en">Old status</item>
+        <item id="order_status_histories_new_status" lang="ru">Новый статус</item>
+        <item id="order_status_histories_new_status" lang="en">New status</item>
+        <item id="order_status_histories_user" lang="ru">Кем изменен</item>
+        <item id="order_status_histories_user" lang="en">User who changed</item>
+        <item id="order_status_histories_date_change" lang="ru">Дата изменения</item>
+        <item id="order_status_histories_date_change" lang="en">Date of change</item>
+    </language_variables>
+    <queries>
+        <item editions="MULTIVENDOR,ULTIMATE">CREATE TABLE `?:order_status_histories` (
+            `log_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+            `user_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
+            `order_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
+            `timestamp` int(11) unsigned NOT NULL DEFAULT '0',
+            `status_from` varchar(1) NOT NULL DEFAULT '',
+            `status_to` varchar(1) NOT NULL DEFAULT '',
+            PRIMARY KEY (`log_id`)
+            ) ENGINE=MyISAM DEFAULT CHARSET=utf8</item>
+        <item for="uninstall" editions="MULTIVENDOR,ULTIMATE">DROP TABLE IF EXISTS ?:order_status_histories</item>
+    </queries>
+    <translations>
+        <item for="description" lang="ru">Позволяет отслеживать историю изменения статусов заказов</item>
+        <item for="name" lang="ru">История статусов заказов</item>
+    </translations>
+</addon>
