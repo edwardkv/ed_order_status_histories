@@ -4,7 +4,7 @@
 
 ```copy app /folder_cscart/```
 
-```design /folder_cscart/```
+```copy design /folder_cscart/```
 
 ```copy var /folder_cscart/```
 
