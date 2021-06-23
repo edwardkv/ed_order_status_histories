@@ -22,6 +22,8 @@
     <language_variables>
         <item id="ed_order_status_histories" lang="en">Orders history status</item>
         <item id="ed_order_status_histories" lang="ru">История изменения статусов заказов</item>
+        <item id="ed_order_status_histories_menu_description" lang="en">Viewing the history of order status changes</item>
+        <item id="ed_order_status_histories_menu_description" lang="ru">Просмотр истории изменения статусов заказов</item>
         <item id="order_status_histories" lang="en">History of changes in order statuses</item>
         <item id="order_status_histories" lang="ru">История изменения статусов заказов</item>
         <item id="order_status_histories_order_id" lang="ru">ID заказа</item>
