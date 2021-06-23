@@ -19,24 +19,6 @@
             <phone>+7 902 356 60 86</phone>
         </author>
     </authors>
-    <language_variables>
-        <item id="ed_order_status_histories" lang="en">Orders history status</item>
-        <item id="ed_order_status_histories" lang="ru">История изменения статусов заказов</item>
-        <item id="ed_order_status_histories_menu_description" lang="en">Viewing the history of order status changes</item>
-        <item id="ed_order_status_histories_menu_description" lang="ru">Просмотр истории изменения статусов заказов</item>
-        <item id="order_status_histories" lang="en">History of changes in order statuses</item>
-        <item id="order_status_histories" lang="ru">История изменения статусов заказов</item>
-        <item id="order_status_histories_order_id" lang="ru">ID заказа</item>
-        <item id="order_status_histories_order_id" lang="en">order ID</item>
-        <item id="order_status_histories_old_status" lang="ru">Старый статус</item>
-        <item id="order_status_histories_old_status" lang="en">Old status</item>
-        <item id="order_status_histories_new_status" lang="ru">Новый статус</item>
-        <item id="order_status_histories_new_status" lang="en">New status</item>
-        <item id="order_status_histories_user" lang="ru">Кем изменен</item>
-        <item id="order_status_histories_user" lang="en">User who changed</item>
-        <item id="order_status_histories_date_change" lang="ru">Дата изменения</item>
-        <item id="order_status_histories_date_change" lang="en">Date of change</item>
-    </language_variables>
     <queries>
         <item editions="MULTIVENDOR,ULTIMATE">CREATE TABLE `?:order_status_histories` (
             `log_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
