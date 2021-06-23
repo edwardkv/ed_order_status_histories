@@ -1,4 +1,4 @@
-# Module ed_order_status_histories for cs-cart.
+# Модуль 'история изменения статусов заказов' ed_order_status_histories for cs-cart.
 
 Скопировать в директорию cscart
 
@@ -8,5 +8,5 @@
 
 ```copy var /folder_cscart/```
 
-Установить модуль в меню  'Управление модулями'.
+Установить модуль 'История статусов заказов' в меню 'Модули -> Управление модулями'
 ```/admin.php?dispatch=addons.manage```
