@@ -8,3 +8,37 @@ msgctxt "Addons::name::order_status_histories"
 msgid "Order status histories"
 msgstr "История статусов заказов"
 
+msgctxt "Languages::ed_order_status_histories"
+msgid "Orders history status"
+msgstr "История изменения статусов заказов"
+
+msgctxt "Languages::ed_order_status_histories_menu_description"
+msgid "Viewing the history of order status changes"
+msgstr "Просмотр истории изменения статусов заказов"
+
+msgctxt "Languages::order_status_histories"
+msgid "Orders history status"
+msgstr "История изменения статусов заказов"
+
+msgctxt "Languages::order_status_histories_order_id"
+msgid "order ID"
+msgstr "ID заказа"
+
+msgctxt "Languages::order_status_histories_old_status"
+msgid "Old status"
+msgstr "Старый статус"
+
+msgctxt "Languages::order_status_histories_new_status"
+msgid "New status"
+msgstr "Новый статус"
+
+msgctxt "Languages::order_status_histories_user"
+msgid "User who changed"
+msgstr "Кем изменен"
+
+msgctxt "Languages::order_status_histories_date_change"
+msgid "Date of change"
+msgstr "Дата изменения"
+
+
+
