@@ -2,7 +2,7 @@
 
     {include file="common/pagination.tpl"  }
 
-    {assign var="order_status_descr" value=$smarty.const.STATUSES_ORDER|fn_get_simple_statuses:true:true}
+    {$order_status_descr = $smarty.const.STATUSES_ORDER|fn_get_simple_statuses:true:true}
 
     {if $order_status_histories}
         <table width="100%" class="table">
