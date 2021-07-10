@@ -2,6 +2,10 @@
 
 use Tygh\Navigation\LastView;
 
+/*
+ * add data to log
+ * @param array     $data
+*/
 function fn_ed_order_status_histories_add_log($data = [])
 {
     if (!empty($_SESSION['auth']['user_id'])) {
@@ -22,9 +26,18 @@ function fn_ed_order_status_histories_add_log($data = [])
     return true;
 }
 
-/*
-    function connect to the hook 'change_order_status' in fn.cart.php
-*/
+
+/**
+ * function connect to the hook 'change_order_status' in fn.cart.php
+ * Hook handler: save order status changes in log
+ *
+ * @param char      $status_to
+ * @param char      $status_from
+ * @param array     $order_info
+ * @param array     $force_notification
+ * @param array     $order_statuses
+ * @param bool      $place_order
+ */
 function fn_ed_order_status_histories_change_order_status($status_to, $status_from, $order_info, $force_notification, $order_statuses, $place_order)
 {
     fn_ed_order_status_histories_add_log([
@@ -37,7 +50,8 @@ function fn_ed_order_status_histories_change_order_status($status_to, $status_fr
 
 /*
  * get order status histories
-*/
+ * @param array      $params 
+ */
 function fn_get_order_status_histories($params)
 {
     $params = LastView::instance()->update('order_status_histories', $params);
